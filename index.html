@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+    <body>
+    <div class="error">Network error...try to reload</div>
+    <div class="menuButton" onclick="openMenu()">
+    <img src="./img/main-menu-icon.svg" width="40px" height="40px"/>
+    </div>
+    <div class="sideBarMenuNone" id="sidebar">
+    <div onclick="changeVideo('https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd')">MPEG\DASH Link</div>
+    <div onclick="changeVideo('https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8')">HLS LINK</div>
+    </div>
+
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        <!--<div class="videoDiv">-->
+        <!--<div class="playback"></div>-->
+        <video id="video" loop autoplay></video>
+        <div class="playbackCont">
+        <div class="progressDiv">
+            <div class="circleDiv"></div>
+            <progress id="progress">
+            </progress>
+        </div>
+        <div class="playback" id="playback">
+            <div id="startTime">00:00</div>
+            <img src="./img/pause-button.svg" width="45px" height="45px" onclick="togglePlay()" id="playbutton"/>
+            <div id="wholeTime">00:00</div>
+        </div>
+        </div>
+        <!--<div class="playback"/>-->
+        <!--<div/>-->
+        <!-- Add your site or application content here -->
+        <script src="./js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <!--<script>window.jQuery || document.write('<script src="public/js/vendor/jquery-3.2.1.min.js"><\/script>')</script>-->
+        <script src="./js/plugins.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+        <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+        <script src="./js/main.js"></script>
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>
